@@ -1,0 +1,19 @@
+{
+  "name": "app-hosting-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "license": "ISC",
+  "scripts": {},
+  "devDependencies": {
+    "husky": "8.0.3",
+    "lint-staged": "15.2.10",
+    "prettier": "2.8.8",
+    "turbo": "2.5.4"
+  },
+  "volta": {
+    "node": "22.4.0",
+    "pnpm": "10.11.0"
+  },
+  "packageManager": "pnpm@10.11.0"
+}
