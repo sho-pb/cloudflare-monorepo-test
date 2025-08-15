@@ -3,5 +3,5 @@ name = "cloudflare-monorepo-test"
 pages_build_output_dir = ".vercel/output/static"
 compatibility_date = "2025-08-01"
 
-# [env.production]
-# compatibility_flags = [ "nodejs_compat" ]
+[env.production]
+compatibility_flags = [ "nodejs_compat" ]
