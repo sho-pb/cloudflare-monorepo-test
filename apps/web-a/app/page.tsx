@@ -19,7 +19,7 @@ export default function Home() {
           </li>
           <li>Save and see your changes instantly.</li>
         </ol>
-        <p>TEST: {process.env.NEXT_PUBLIC_TEST}</p>
+        <p>TEST: {process.env.NEXT_PUBLIC_TEST} 2</p>
         <div className={styles.ctas}>
           <a
             className={styles.primary}
