@@ -5,6 +5,3 @@ compatibility_date = "2025-08-01"
 
 [env.production]
 compatibility_flags = [ "nodejs_compat" ]
-
-[vars]
-NEXT_PUBLIC_TEST = "Hello Cloudflare"
