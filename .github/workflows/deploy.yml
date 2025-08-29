@@ -36,4 +36,5 @@ jobs:
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          command: pages deploy ./apps/web/web-a/.vercel/output/static --project-name=cloudflare-monorepo-test --branch=main
+          workingDirectory: './apps/web-a'
+          command: pages deploy .vercel/output/static --project-name=cloudflare-monorepo-test --branch=main
