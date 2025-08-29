@@ -30,7 +30,7 @@ jobs:
         run: pnpm install
 
       - name: Build
-        run: pnpm build
+        run: pnpm dlx @cloudflare/next-on-pages@1
 
       - name: Deploy
         uses: cloudflare/wrangler-action@v3
