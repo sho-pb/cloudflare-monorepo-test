@@ -1,5 +1,7 @@
 import Image from 'next/image';
 import styles from './page.module.css';
+import { Suspense } from 'react';
+import { Post } from '@/app/_components/Post';
 
 export default function Home() {
   return (
@@ -46,6 +48,13 @@ export default function Home() {
           </a>
         </div>
       </main>
+
+      <hr />
+      <Suspense fallback={<p>loading...</p>}>
+        <Post />
+      </Suspense>
+      <hr />
+
       <footer className={styles.footer}>
         <a
           href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
