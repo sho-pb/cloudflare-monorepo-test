@@ -14,5 +14,9 @@ export const Post = async () => {
 
   await new Promise<void>((resolve) => setTimeout(() => resolve(), 2000));
 
-  return <div>{data?.title}</div>;
+  return (
+    <div>
+      {data?.id}:{data?.title}
+    </div>
+  );
 };
