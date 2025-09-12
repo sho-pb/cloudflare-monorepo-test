@@ -1,3 +1,6 @@
+export const runtime = 'edge';
+export const dynamic = 'force-dynamic';
+
 export const Post = async () => {
   const postId = Math.floor(Math.random() * 10) + 1;
 
