@@ -18,7 +18,7 @@ export const Post = async () => {
 
   return (
     <div>
-      {data?.id}:{data?.title}
+      {postId}:{data?.id}:{data?.title}
     </div>
   );
 };
