@@ -1,5 +1,3 @@
-export const dynamic = 'force-dynamic';
-
 import Image from 'next/image';
 import styles from './page.module.css';
 import { Suspense } from 'react';
@@ -9,9 +7,11 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
+        うわああああ
         <Suspense fallback={<p>loading...</p>}>
           <Post />
         </Suspense>
+        うわああああ
       </main>
       <footer className={styles.footer}>
         <a
