@@ -1,10 +1,24 @@
 import openNextWorker from '../.open-next/worker.js';
 
+const rewrites = [
+  {
+    source: '/articles',
+    destination: '/blog',
+  },
+    {
+    source: '/news',
+    destination: '/blog',
+  },
+];
+
 const generateCustomRequest = (request) => {
   const url = new URL(request.url);
 
-  if (url.pathname.startsWith('/articles')) {
-    url.pathname = url.pathname.replace('/articles', '/blog');
+  const rewrite = rewrites.find(({ source }) =>
+    url.pathname.startsWith(source)
+  );
+  if (rewrite) {
+    url.pathname = url.pathname.replace(rewrite.source, rewrite.destination);
 
     return new Request(url.toString(), request);
   }
