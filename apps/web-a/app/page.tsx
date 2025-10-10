@@ -6,6 +6,8 @@ import { Suspense } from 'react';
 import { Post } from '@/app/_components/Post';
 
 export default function Home() {
+  console.log('logging from page.tsx');
+
   return (
     <div className={styles.page}>
       <main className={styles.main}>
