@@ -9,11 +9,11 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        うわああああ
+        【{process.env.NEXT_PUBLIC_TEST}】うわああああ
         <Suspense fallback={<p>loading...</p>}>
           <Post />
         </Suspense>
-        うわああああ
+        【{process.env.NEXT_PUBLIC_TEST}】うわああああ
       </main>
       <footer className={styles.footer}>
         <a
