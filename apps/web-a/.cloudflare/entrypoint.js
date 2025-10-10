@@ -5,8 +5,15 @@ const rewrites = [
     source: '/articles',
     destination: '/blog',
   },
-    {
+  {
     source: '/news',
+    destination: '/blog',
+  },
+];
+
+const redirects = [
+  {
+    source: '/happy',
     destination: '/blog',
   },
 ];
@@ -26,13 +33,25 @@ const generateCustomRequest = (request) => {
   return request;
 };
 
+const generateRedirectResponse = (request) => {
+  const url = new URL(request.url);
+
+  const redirect = redirects.find(({ source }) =>
+    url.pathname.startsWith(source)
+  );
+
+  if (!redirect) return undefined;
+  
+  const destinationUrl = new URL(redirect.destination, url.origin);
+
+  return Response.redirect(destinationUrl.toString(), 302);
+};
+
 // eslint-disable-next-line
 export default {
   async fetch(request, env, ctx) {
     const auth = request.headers.get('Authorization');
     const valid = 'Basic ' + btoa(`admin:password`);
-
-    const customRequest = generateCustomRequest(request);
 
     if (auth !== valid) {
       return new Response('Unauthorized', {
@@ -43,7 +62,9 @@ export default {
       });
     }
 
-    // 認証OKなら OpenNext の worker に渡す
-    return openNextWorker.fetch(customRequest, env, ctx);
+    const customRequest = generateCustomRequest(request);
+    const redirectResponse = generateRedirectResponse(request);
+
+    return redirectResponse ?? openNextWorker.fetch(customRequest, env, ctx);
   },
 };
