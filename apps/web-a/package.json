@@ -27,8 +27,8 @@
     "eslint": "^9",
     "eslint-config-next": "15.3.5",
     "eslint-plugin-next-on-pages": "^1.13.13",
-    "typescript": "^5",
+		"typescript": "^5.9.2",
     "vercel": "^44.7.3",
-    "wrangler": "^4.27.0"
+    "wrangler": "^4.40.0"
   }
 }
