@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        【{process.env.NEXT_PUBLIC_TEST}】うわああああ
+        【{process.env.NEXT_PUBLIC_TEST}】うわああああ third
         <Suspense fallback={<p>loading...</p>}>
           <Post />
         </Suspense>
